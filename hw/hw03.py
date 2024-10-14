@@ -130,7 +130,6 @@ def balanced(m):
     "*** YOUR CODE HERE ***"
     if left(m)[1] * total_mass(left(m)[2]) != right(m)[1] * total_mass(right(m)[2]):
         return False
-    # 基本质量判断
     if not is_planet(left(m)[2]) and not is_planet(right(m)[2]):
         return balanced(left(m)[2]) and balanced(right(m)[2])
     return True
@@ -178,7 +177,6 @@ def max_path_sum(t):
     if is_leaf(t):
         return label(t)  # END
     return label(t) + max([max_path_sum(b) for b in branches(t)])
-    # 写这题已经很久没碰树了，以至于不知道可以in branches(t)，浪费很长时间orz
 
 
 def print_move(origin, destination):
